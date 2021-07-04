@@ -146,13 +146,12 @@ CRISPY_TEMPLATE_PACK='bootstrap4'
 LOGIN_REDIRECT_URL='blog-home'
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dmfmk8lhd',
-    'API_KEY': '842417436383643',
-    'API_SECRET': 'gHpCy_BV9V8AOcez8FWErb7jDEo'
+    'CLOUD_NAME': '',
+    'API_KEY': '',
+    'API_SECRET': ''
 }
 
-
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.RawMediaCloudinaryStorage'
+DEFAULT_FILE_STORAGE = ''
 
 
 LOGIN_URL='login'

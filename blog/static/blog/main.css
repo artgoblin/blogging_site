@@ -26,6 +26,16 @@ ul {
 
   
 }
+
+.responsive {
+  width: 70%;
+  height: auto;
+}
+
+
+
+
+
 .site-header .navbar-nav .nav-link {
   color: #80c2eb;
   
