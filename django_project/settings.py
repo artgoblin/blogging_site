@@ -53,6 +53,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cloudinary_storage',
+    'ckeditor',
+    'ckeditor_uploader',
    
 ]
 
@@ -139,6 +141,20 @@ STATIC_URL = '/static/'
 MEDIA_URL='/media/'
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 
+CKEDITOR_UPLOAD_PATH = 'image_database'
+CKEDITOR_IMAGE_BACKEND = "pillow"
+CKEDITOR_UPLOAD_SLUGIFY_FILENAME = False
+
+CKEDITOR_CONFIGS = {
+'default': {
+    'toolbar': None, #You can change this based on your requirements.
+    'width': 'auto',
+
+          },
+    }
+
+
+
 
 CRISPY_TEMPLATE_PACK='bootstrap4'
 # Default primary key field type
@@ -146,12 +162,12 @@ CRISPY_TEMPLATE_PACK='bootstrap4'
 LOGIN_REDIRECT_URL='blog-home'
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': '',
-    'API_KEY': '',
-    'API_SECRET': ''
+    'CLOUD_NAME': 'dmfmk8lhd',
+    'API_KEY': '842417436383643',
+    'API_SECRET': 'gHpCy_BV9V8AOcez8FWErb7jDEo'
 }
 
-DEFAULT_FILE_STORAGE = ''
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.RawMediaCloudinaryStorage'
 
 
 LOGIN_URL='login'

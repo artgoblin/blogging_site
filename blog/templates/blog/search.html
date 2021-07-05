@@ -9,7 +9,7 @@
                     <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
                 </div>
                 <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
-                <p class="article-content">{{ post.content }}</p>
+                <p class="article-content">{{ post.content|urlize|safe }}</p>
              </div>
             </article>
         {% endfor %}
@@ -57,7 +57,7 @@
                            <img src="{{search_result.header_image.url}}"    class="responsive">
                      {% endif %}
 
-                     <p class="article-content">{{ search_result.content }}</p>
+                     <p class="article-content">{{ search_result.content|safe|urlize }}</p>
                   </div>
                </article>
            
