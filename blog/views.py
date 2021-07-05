@@ -6,7 +6,7 @@ from django.urls.base import reverse
 from django.views.generic import ListView,DetailView,CreateView,UpdateView,DeleteView
 from django.http import HttpResponse, request
 from .models import Comment, Post 
-
+from django.db.models import Q, query
 # Create your views here.
 
 
@@ -122,7 +122,10 @@ def LikeView(request,pk):
 def SearchView(request):
     if request.method=="POST":
         searched=request.POST.get('searched')
-        search_results=Post.objects.filter(title=searched)
+        searches=searched.split(" ")
+        for search in searches:
+            
+            search_results=Post.objects.filter(Q(title__icontains=search)).distinct()
 
         return render(request,'blog/search.html',{'searched':searched,
         'search_results':search_results})
