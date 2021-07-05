@@ -14,5 +14,6 @@ urlpatterns = [
     path('like/<int:pk>',views.LikeView,name='like_post'),
     path('post/new/', PostCreateView.as_view(),name="post-create"),
     path('about/', views.about,name="blog-about"),
+    path('search/', views.SearchView,name="blog-search"),
     path('collegestudds/', views.collegestuddes,name="blog-college"),
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

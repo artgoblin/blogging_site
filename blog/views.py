@@ -119,3 +119,12 @@ def LikeView(request,pk):
     post.likes.add(request.user)
     return HttpResponseRedirect(reverse('post-detail',args=[str(pk)]))
 
+def SearchView(request):
+    if request.method=="POST":
+        searched=request.POST.get('searched')
+        search_results=Post.objects.filter(title=searched)
+
+        return render(request,'blog/search.html',{'searched':searched,
+        'search_results':search_results})
+    else:
+        return render(request,'blog/search.html',{'title':'Blog-search'})

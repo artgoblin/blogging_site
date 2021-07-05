@@ -9,10 +9,6 @@
                     <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
                 </div>
                 <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
-                  {% if post.header_image %}
-                     <img src="{{post.header_image.url}}"    class="responsive">
-                  {% endif %}
-
                 <p class="article-content">{{ post.content }}</p>
              </div>
             </article>
@@ -44,4 +40,34 @@
             {% endif %}
              
         {% endif %}
+         {% if searched %}
+            <h1>You searched for {{searched}}</h1>
+            <br>
+            {% for search_result in search_results %}
+               
+                <article class="media content-section">
+                  <img class="rounded-circle article-img" src="{{search_result.author.profile.image.url}}" >
+                  <div class="media-body">
+                     <div class="article-metadata">
+                       {{ search_result.author }}
+                        <small class="text-muted">{{ search_result.date_posted|date:"F d, Y" }}</small>
+                     </div>
+                     <h2>{{ search_result.title }}</h2>
+                     {% if search_result.header_image %}
+                           <img src="{{search_result.header_image.url}}"    class="responsive">
+                     {% endif %}
+
+                     <p class="article-content">{{ search_result.content }}</p>
+                  </div>
+               </article>
+           
+         
+            {% endfor %}
+         {% else %}
+            <h1>Oops! we need some thing to search</h1>
+         {% endif %}
+         
+
+
+
 {%endblock content%}

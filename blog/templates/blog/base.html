@@ -32,6 +32,16 @@
               <a class="nav-item nav-link btn" href="{% url 'blog-home' %}">Home</a>
               <a class="nav-item nav-link btn" href="{% url 'blog-about' %}">About</a>
             </div>
+            <form method="POST" action="{% url 'blog-search' %}">
+              {% csrf_token %}
+              <div class="topnav">
+                
+                
+                
+                <input type="text" placeholder="Search.." name="searched">
+                <button class=" btn btn-outline-info">Search</button>
+              </div>
+            </form>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
               {% if user.is_authenticated %}
