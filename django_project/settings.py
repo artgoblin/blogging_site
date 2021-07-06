@@ -34,7 +34,7 @@ ALLOWED_HOSTS = [
    'https://the-yogify.herokuapp.com/',
    'the-yogify.herokuapp.com',
    'the-yogify.herokuapp.com/',
-   '127.0.0.1',
+   '',
    'collegestudds.herokuapp.com',
 
 ]
@@ -141,7 +141,7 @@ STATIC_URL = '/static/'
 MEDIA_URL='/media/'
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 
-CKEDITOR_UPLOAD_PATH = 'image_database'
+CKEDITOR_UPLOAD_PATH = 'database_image'
 CKEDITOR_IMAGE_BACKEND = "pillow"
 CKEDITOR_UPLOAD_SLUGIFY_FILENAME = False
 
@@ -162,9 +162,9 @@ CRISPY_TEMPLATE_PACK='bootstrap4'
 LOGIN_REDIRECT_URL='blog-home'
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dmfmk8lhd',
-    'API_KEY': '842417436383643',
-    'API_SECRET': 'gHpCy_BV9V8AOcez8FWErb7jDEo'
+    'CLOUD_NAME': '',
+    'API_KEY': '',
+    'API_SECRET': ''
 }
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.RawMediaCloudinaryStorage'
